@@ -1,0 +1,48 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    &-logoBlock {
+        display: flex;
+        align-items: center;
+        img {
+            margin-right: 17px;
+        }
+    }
+    &-title {
+        font-size: 25px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: black;
+    }
+    &-subtitle {
+        color: #999;
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    &-button {
+        display: flex;
+        align-items: center;
+        background-color: #fe5f1e;
+        color: white;
+        padding: 0 25px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 38px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background-color: darken(#fe5f1e, 24%);
+        }
+        &:active {
+            background-color: darken(#fe5f1e, 34%);
+        }
+        span {
+            width: 1px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 12px;
+        }
+    }
+}

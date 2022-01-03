@@ -1,0 +1,112 @@
+@import "../../variables.scss";
+.content-title {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 55px;
+    @media (max-width: 1200px) {
+        text-align: center;
+    }
+}
+.content-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @media (max-width: 1410px) {
+    }
+}
+.pizza-block {
+    padding: 0 12px;
+    margin-bottom: 65px;
+    flex: 0 0 280px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: 1410px) {
+        flex: 0 0 32%;
+    }
+    @media (max-width: 977px) {
+        flex: 0 0 50%;
+    }
+    @media (max-width: 690px) {
+        flex: 0 0 100%;
+    }
+    &_img {
+        margin-bottom: 10px;
+        width: 280px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 250px;
+        }
+    }
+    &_info {
+        width: 280px;
+    }
+    &_name {
+        font-size: 22px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    &_selectSize {
+        background-color: rgb(225, 225, 225);
+        padding: 7px;
+        border-radius: 18px;
+        margin-bottom: 25px;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            li {
+                cursor: pointer;
+                font-weight: bold;
+                border-radius: 7px;
+                padding: 10px 15px;
+                &.active {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    &_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_button {
+        border: 2px solid $myOrange;
+        border-radius: 38px;
+        font-weight: bold;
+        font-size: 16px;
+        .button-count {
+            background-color: $myOrange;
+            color: white;
+            font-size: 14px;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .button-text {
+            margin: 0 7px;
+        }
+        &:hover {
+            background-color: $myOrange;
+            color: white;
+            .button-count {
+                background-color: #fff;
+                color: $myOrange;
+            }
+        }
+        &:active {
+            background-color: darken($myOrange, 16%);
+        }
+    }
+    &_price {
+        font-weight: bold;
+        font-size: 22px;
+    }
+}

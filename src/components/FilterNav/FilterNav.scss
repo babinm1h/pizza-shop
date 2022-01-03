@@ -1,0 +1,78 @@
+@import "../../variables.scss";
+.categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    &-list {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 15px;
+        @media (max-width: 1200px) {
+            margin-bottom: 25px;
+        }
+    }
+    &-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        padding: 0 20px;
+        margin-right: 10px;
+        border-radius: 38px;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        &.active {
+            color: #fff;
+            background-color: black;
+        }
+        @media (max-width: 1000px) {
+            margin-right: 5px;
+        }
+    }
+    @media (max-width: 1200px) {
+        display: block;
+    }
+}
+.sortby {
+    position: relative;
+    max-width: 310px;
+    &-info {
+        display: flex;
+        align-items: center;
+    }
+    &-label {
+        margin-right: 5px;
+        font-weight: bold;
+    }
+    &-value {
+        color: $myOrange;
+        padding-bottom: 2px;
+        border-bottom: 1px dashed $myOrange;
+        cursor: pointer;
+    }
+    &-panel {
+        position: absolute;
+        background-color: #fff;
+        position: absolute;
+        width: 142px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        right: 0;
+        @media (max-width: 1200px) {
+            right: 90px;
+        }
+    }
+    &-list {
+        padding: 15px;
+        &_item {
+            cursor: pointer;
+            padding: 10px 0;
+            &.active {
+                color: $myOrange;
+                font-weight: bold;
+            }
+        }
+    }
+}
