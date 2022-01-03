@@ -11,8 +11,8 @@ const Header = () => {
                 <div className="header-logoBlock">
                     <img src={headerLogo} alt="logo" />
                     <div>
-                        <h1 className="header-title">PIZZA STORE</h1>
-                        <p className="header-subtitle">лучшая пицца</p>
+                        <h1 className="header-title">PIZZA SHOP</h1>
+                        <p className="header-subtitle">лучшая пицца в мире</p>
                     </div>
                 </div>
             </NavLink>

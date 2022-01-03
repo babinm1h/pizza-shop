@@ -23,6 +23,7 @@
         border-radius: 38px;
         cursor: pointer;
         transition: all 0.2s linear;
+        font-size: 16px;
         &.active {
             color: #fff;
             background-color: black;
@@ -43,14 +44,22 @@
         align-items: center;
     }
     &-label {
-        margin-right: 5px;
+        margin-right: 7px;
         font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        img {
+            transform: rotate(180deg);
+            margin-right: 5px;
+            &.rotated {
+                transform: rotate(360deg);
+            }
+        }
     }
     &-value {
         color: $myOrange;
-        padding-bottom: 2px;
-        border-bottom: 1px dashed $myOrange;
         cursor: pointer;
+        width: 100px;
     }
     &-panel {
         position: absolute;

@@ -12,9 +12,13 @@ const Categories = () => {
     return (
         <nav className="categories-nav">
             <ul className="categories-list">
-                <li className="categories-item active">fffa</li>
+                <li className={activeCat === null ? "categories-item active" : "categories-item"}
+                    onClick={() => setActiveCat(null)}>Все</li>
                 {categories.map((cat, index) =>
-                    <li className="categories-item">{cat}</li>
+                    <li className={activeCat === index ? "categories-item active" : "categories-item"}
+                        key={cat} onClick={() => setActiveCat(index)}>
+                        {cat}
+                    </li>
                 )}
             </ul>
         </nav>
