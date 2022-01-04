@@ -2,7 +2,8 @@ import { IPizzaState, PizzaActions, PizzaActionTypes } from "../../types/pizzaTy
 
 
 const initialState: IPizzaState = {
-    items: []
+    items: [],
+    isLoading: true
 }
 
 export const pizzaReducer = (state = initialState, action: PizzaActions): IPizzaState => {
@@ -10,6 +11,9 @@ export const pizzaReducer = (state = initialState, action: PizzaActions): IPizza
 
         case PizzaActionTypes.FETCH_PIZZA:
             return { ...state, items: action.payload }
+
+        case PizzaActionTypes.SET_IS_LOADING:
+            return { ...state, isLoading: action.payload }
 
         default:
             return state

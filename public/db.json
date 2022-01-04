@@ -12,7 +12,7 @@
                 26,
                 30
             ],
-            "price": 803,
+            "price": 999,
             "category": 0,
             "rating": 4
         },
@@ -43,7 +43,7 @@
                 40
             ],
             "price": 295,
-            "category": 1,
+            "category": 0,
             "rating": 4
         },
         {
@@ -82,7 +82,7 @@
         {
             "id": 5,
             "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
-            "name": "Крэйзи пепперони",
+            "name": "Ананас пепперони",
             "types": [
                 0
             ],
@@ -108,7 +108,7 @@
                 40
             ],
             "price": 675,
-            "category": 1,
+            "category": 0,
             "rating": 9
         },
         {
@@ -158,8 +158,8 @@
                 30,
                 40
             ],
-            "price": 285,
-            "category": 5,
+            "price": 745,
+            "category": 1,
             "rating": 7
         }
     ]

@@ -1,5 +1,7 @@
 import React from 'react';
 import sortIcon from "../../../img/sortIcon.svg"
+import { ISortBy } from '../../../types/filter.Types';
+import "../FilterNav.scss"
 
 const sortArr = [
     { name: "популярности", type: "rating", order: "desc" },
@@ -7,7 +9,12 @@ const sortArr = [
     { name: "алфавиту", type: "name", order: "asc" }
 ]
 
-const SortPanel = () => {
+interface ISortPanelProps {
+    selectSortBy: (sortBy: ISortBy) => void
+    activeSortType: string
+}
+
+const SortPanel: React.FC<ISortPanelProps> = ({ selectSortBy, activeSortType }) => {
     const [visiblePanel, setVisiblePanel] = React.useState(false)
     const sortRef = React.useRef<HTMLDivElement | any>()
 
@@ -15,8 +22,10 @@ const SortPanel = () => {
 
     const onSelectSort = (index: number) => {
         setActiveSort(index)
+        selectSortBy(sortArr[index])
         setVisiblePanel(false)
     }
+
 
     const toggleVisiblePanel = () => {
         setVisiblePanel(!visiblePanel)
@@ -40,7 +49,7 @@ const SortPanel = () => {
                     <img src={sortIcon} alt="trigon" className={visiblePanel ? "rotated" : ""} />
                     Сортировка по: </div>
                 <p className="sortby-value" onClick={toggleVisiblePanel}>
-                    {sortArr[activeSort].name}
+                    {activeSortType}
                 </p>
             </div>
             {visiblePanel &&

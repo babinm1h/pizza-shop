@@ -2,21 +2,27 @@ import React from 'react';
 
 const categories = ["Мясные", "Вегатарианские", "Гриль", "Острые", "Закрытые"]
 
-const Categories = () => {
-    const [activeCat, setActiveCat] = React.useState<number | null>(null)
+interface ICategoriesProps {
+    selectCategory: (index: number | null) => void
+    activeCategory: number | null
+}
 
-    const onSetCateg = (index: number) => {
-        setActiveCat(index)
-    }
+const Categories: React.FC<ICategoriesProps> = ({ selectCategory, activeCategory }) => {
+
+    const onSelectCategory = React.useCallback((index: number | null) => {
+        selectCategory(index)
+    }, [])
 
     return (
         <nav className="categories-nav">
             <ul className="categories-list">
-                <li className={activeCat === null ? "categories-item active" : "categories-item"}
-                    onClick={() => setActiveCat(null)}>Все</li>
+                <li className={activeCategory === null ? "categories-item active" : "categories-item"}
+                    onClick={() => onSelectCategory(null)}>
+                    Все
+                </li>
                 {categories.map((cat, index) =>
-                    <li className={activeCat === index ? "categories-item active" : "categories-item"}
-                        key={cat} onClick={() => setActiveCat(index)}>
+                    <li className={activeCategory === index ? "categories-item active" : "categories-item"} key={cat}
+                        onClick={() => onSelectCategory(index)}>
                         {cat}
                     </li>
                 )}

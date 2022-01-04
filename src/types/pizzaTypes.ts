@@ -12,15 +12,21 @@ export interface IPizzaItem {
 
 export interface IPizzaState {
     items: IPizzaItem[]
+    isLoading: boolean
 }
 
 export enum PizzaActionTypes {
-    FETCH_PIZZA = "pizza/FETCH_PIZZA"
+    FETCH_PIZZA = "pizza/FETCH_PIZZA",
+    SET_IS_LOADING = "pizza/SET_IS_LOADING"
 }
 
 export interface IFetchPizzaAction {
     type: PizzaActionTypes.FETCH_PIZZA
     payload: IPizzaItem[]
 }
+export interface ISetIsLoadingAction {
+    type: PizzaActionTypes.SET_IS_LOADING
+    payload: boolean
+}
 
-export type PizzaActions = IFetchPizzaAction
+export type PizzaActions = IFetchPizzaAction | ISetIsLoadingAction

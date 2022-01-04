@@ -1,41 +1,4 @@
 @import "../../variables.scss";
-.categories {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 35px;
-    &-list {
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        font-size: 15px;
-        @media (max-width: 1200px) {
-            margin-bottom: 25px;
-        }
-    }
-    &-item {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        height: 45px;
-        padding: 0 20px;
-        margin-right: 10px;
-        border-radius: 38px;
-        cursor: pointer;
-        transition: all 0.2s linear;
-        font-size: 16px;
-        &.active {
-            color: #fff;
-            background-color: black;
-        }
-        @media (max-width: 1000px) {
-            margin-right: 5px;
-        }
-    }
-    @media (max-width: 1200px) {
-        display: block;
-    }
-}
 .sortby {
     position: relative;
     max-width: 310px;
