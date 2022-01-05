@@ -2,15 +2,30 @@ import React from 'react';
 import btnPlus from "../../../img/btnPlus.svg"
 import { IPizzaItem } from '../../../types/pizzaTypes';
 import classNames from "classnames"
+import { IAddedPizza } from '../../../types/cartTypes';
 
 const pizzaSizes = [26, 30, 40]
 
 interface IPizzaBlockProps {
     pizza: IPizzaItem
+    addToCart: (pizza: IAddedPizza) => void
+    inCartCount: number
 }
 
-const PizzaBlock: React.FC<IPizzaBlockProps> = ({ pizza }) => {
+const PizzaBlock: React.FC<IPizzaBlockProps> = ({ pizza, addToCart, inCartCount }) => {
     const [activeSize, setActiveSize] = React.useState(0)
+
+    const onAddToCart = () => {
+        const obj: IAddedPizza = {
+            id: pizza.id,
+            name: pizza.name,
+            price: pizza.price,
+            size: pizzaSizes[activeSize],
+            type: 0,
+            imageUrl: pizza.imageUrl
+        }
+        addToCart(obj)
+    }
 
     return (
         <div className="pizza-block">
@@ -34,10 +49,10 @@ const PizzaBlock: React.FC<IPizzaBlockProps> = ({ pizza }) => {
                 </div>
                 <div className="pizza-block_bottom">
                     <div className="pizza-block_price">от {pizza.price} ₽</div>
-                    <button className="button pizza-block_button">
+                    <button className="button pizza-block_button" onClick={onAddToCart}>
                         <img src={btnPlus} alt="add" />
                         <span className="button-text">Добавить</span>
-                        <span className="button-count">2</span>
+                        {inCartCount && <span className="button-count">{inCartCount}</span>}
                     </button>
                 </div>
             </div>

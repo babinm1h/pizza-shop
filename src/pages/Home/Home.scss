@@ -83,6 +83,9 @@
         border-radius: 38px;
         font-weight: bold;
         font-size: 16px;
+        &:active {
+            transform: translateY(3px);
+        }
         .button-count {
             background-color: $myOrange;
             color: white;

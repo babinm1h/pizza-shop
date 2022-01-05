@@ -74,12 +74,16 @@
     &-clear {
         display: inline-flex;
         align-items: center;
-        font-size: 17px;
-        color: #999;
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
+        transition: all 0.2s linear;
         img {
             margin-right: 5px;
             height: 17px;
+        }
+        &:hover {
+            color: rgba(0, 0, 0, 0.7);
         }
     }
     &-bottom {
@@ -134,6 +138,13 @@
             font-size: 20px;
             font-weight: bold;
             color: $myOrange;
+            &:hover {
+                background-color: $myOrange;
+                color: white;
+            }
+            &:active {
+                transform: translateY(3px);
+            }
         }
     }
     &_count {
