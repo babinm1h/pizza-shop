@@ -2,6 +2,7 @@ import { Dispatch } from "react";
 import { pizzasAPI } from "../../API/pizzasAPI";
 import { IFetchPizzaAction, IPizzaItem, ISetIsLoadingAction, PizzaActions, PizzaActionTypes } from "../../types/pizzaTypes";
 
+
 // ActionCreators
 export const fetchPizza = (items: IPizzaItem[]): IFetchPizzaAction => ({ type: PizzaActionTypes.FETCH_PIZZA, payload: items })
 
