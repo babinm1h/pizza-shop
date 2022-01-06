@@ -5,5 +5,3 @@ export const setCategory = (category: number | null): ISetCategoryAction => ({ t
 export const setSortBy = (sortBy: ISortBy): ISetSortBy => ({ type: FilterActionTypes.SET_SORTBY, payload: sortBy })
 
 
-
-// thunks

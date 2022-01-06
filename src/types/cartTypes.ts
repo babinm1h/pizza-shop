@@ -22,7 +22,9 @@ export interface ICartState {
 export enum CartActionTypes {
     ADD_PIZZA_TOCART = "cart/ADD_PIZZA_TOCART",
     CLEAR_CART = "cart/ADD_CLEAR_CART",
-    REMOVE_ITEM = "cart/REMOVE_ITEM"
+    REMOVE_ITEM = "cart/REMOVE_ITEM",
+    PLUS_CART_ITEM = "cart/PLUS_CART_ITEM",
+    MINUS_CART_ITEM = "cart/MINUS_CART_ITEM"
 }
 
 
@@ -37,6 +39,15 @@ export interface IRemoveItemAction {
     type: CartActionTypes.REMOVE_ITEM
     payload: number
 }
+export interface IPlusCartItemAction {
+    type: CartActionTypes.PLUS_CART_ITEM
+    payload: number
+}
+export interface IMinusCartItemAction {
+    type: CartActionTypes.MINUS_CART_ITEM
+    payload: number
+}
 
 
-export type CartActions = IAddPizzaToCartAction | IClearCartAction | IRemoveItemAction
+export type CartActions =
+    IAddPizzaToCartAction | IClearCartAction | IRemoveItemAction | IPlusCartItemAction | IMinusCartItemAction

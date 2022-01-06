@@ -10,7 +10,6 @@ import { setCategory, setSortBy } from '../../redux/actionCreators/filterAC';
 import { fetchAllPizzas } from '../../redux/actionCreators/pizzaAC';
 import { IAddedPizza } from '../../types/cartTypes';
 import { ISortBy } from '../../types/filter.Types';
-import { IPizzaItem } from '../../types/pizzaTypes';
 import "./Home.scss"
 
 const Home = () => {

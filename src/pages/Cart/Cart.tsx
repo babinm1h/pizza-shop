@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { IAddedPizza } from '../../types/cartTypes';
 import { useDispatch } from 'react-redux';
-import { clearCart, removeItem } from '../../redux/actionCreators/cartAC';
+import { clearCart, minusCartItem, plusCartItem, removeItem } from '../../redux/actionCreators/cartAC';
 
 const Cart = () => {
     const dispatch = useDispatch()
@@ -27,7 +27,17 @@ const Cart = () => {
     }
 
     const removeCartItem = (id: number) => {
-        dispatch(removeItem(id))
+        if (window.confirm("Вы действительно хотите удалить предмет из корзины?")) {
+            dispatch(removeItem(id))
+        }
+    }
+
+    const onPlusCartItem = (id: number) => {
+        dispatch(plusCartItem(id))
+    }
+
+    const onMinusCartItem = (id: number) => {
+        dispatch(minusCartItem(id))
     }
 
     return (
@@ -46,7 +56,9 @@ const Cart = () => {
                     {addedItems.map((item: IAddedPizza) => <CartItem key={item.id} item={item}
                         totalItemsPrice={items[item.id].totalPrice}
                         totalItemsCount={items[item.id].items.length}
-                        removeCartItem={removeCartItem} />)}
+                        removeCartItem={removeCartItem}
+                        onPlusCartItem={onPlusCartItem}
+                        onMinusCartItem={onMinusCartItem} />)}
 
                     <div className="cart-items_total">
                         <div className="cart-items_totalCount">Всего пицц:
