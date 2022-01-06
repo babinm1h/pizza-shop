@@ -1,4 +1,6 @@
-# React, Redux, TypeScript, SCSS app
+# React, Redux, TypeScript, SCSS app 
+deploy[https://pizza-sh0p.herokuapp.com/]
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
