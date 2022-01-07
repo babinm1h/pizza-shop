@@ -12,11 +12,13 @@ import { IAddedPizza } from '../../types/cartTypes';
 import { ISortBy } from '../../types/filter.Types';
 import "./Home.scss"
 
+
 const Home = () => {
     const dispatch = useDispatch()
     const { items, isLoading } = useTypedSelector(state => state.pizza)
     const { sortBy, category } = useTypedSelector(state => state.filter)
     const cartItems = useTypedSelector(state => state.cart.items)
+
 
     React.useEffect(() => {
         dispatch(fetchAllPizzas(category, sortBy.type, sortBy.order))

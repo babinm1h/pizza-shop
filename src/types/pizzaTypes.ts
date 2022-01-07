@@ -9,6 +9,7 @@ export interface IPizzaItem {
     price: number
     category: number
     rating: number
+    recipe: string[]
 }
 
 
