@@ -13,9 +13,13 @@ export const setIsLoading = (isLoading: boolean): ISetIsLoadingAction => ({ type
 // Thunks
 export const fetchAllPizzas = (category: number | null, sortType: string, order: string) => {
     return async (dispatch: Dispatch<PizzaActions>) => {
-        dispatch(setIsLoading(true))
-        let res = await pizzasAPI.fetchPizzas(category, sortType, order)
-        dispatch(fetchPizza(res))
-        dispatch(setIsLoading(false))
+        try {
+            dispatch(setIsLoading(true))
+            let res = await pizzasAPI.fetchPizzas(category, sortType, order)
+            dispatch(fetchPizza(res))
+            dispatch(setIsLoading(false))
+        } catch (e) {
+            console.log(e)
+        }
     }
 }
